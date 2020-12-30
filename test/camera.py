@@ -13,9 +13,8 @@ while True:
         print("Escape hit, closing...")
         break
     elif k%256 == 32:
-        img_name = "opencv_frame_{}.png".format(img_counter)
+        img_name = "opencv_frame_0.png"
         cv2.imwrite(img_name, frame)
-        print("{} written!".format(img_name))
-        img_counter += 1
+        print("written!".format(img_name))
 cam.release()
 cv2.destroyAllWindows()
