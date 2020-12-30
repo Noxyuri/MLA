@@ -15,6 +15,6 @@ while True:
     elif k%256 == 32:
         img_name = "opencv_frame_0.png"
         cv2.imwrite(img_name, frame)
-        print("written!".format(img_name))
+        print("{} written!".format(img_name))
 cam.release()
 cv2.destroyAllWindows()

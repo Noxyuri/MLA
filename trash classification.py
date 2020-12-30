@@ -1,4 +1,3 @@
-
 import numpy as np
 import cv2
 
@@ -36,9 +35,6 @@ import boto3
 access_key_id = 'AKIA6GG5DNG4Z44BCN2H'
 secret_access_key = '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'
 
-i = 0
-for i in expression_list:
-    pass
 photo = 'opencv_frame_0.png'
 
 region = "ap-southeast-1" 
@@ -53,17 +49,18 @@ MinConfidence=95)
 # print(response)
 
 import pandas as pd
-df = pd.read_csv('database.csv')
-# print few rows
+# import data to dataframe
+df = pd.read_csv('GreenAble - Trang tính1.csv') 
 # print(df)
-object=response["Labels"][0]["Name"]
 nrow,_ = df.shape
-#display circles represent for patients
-for i in range(0, nrow):
-    name = df.iloc[i,0]
-    if (str(name) == object):
-        print(response["Labels"][0]["Name"])
-        print(response["Labels"][0]["Confidence"], "%") 
-        print(df['Type'][i]) 
-    # else:
-    #     print("Not given")
+k=0
+while k<len(response["Labels"]):
+    object= response["Labels"][k]["Name"]
+    # print(object)
+    for i in range(0, nrow):
+        name = df.iloc[i,0]
+        if (str(name) == object):
+            print(response["Labels"][k]["Name"])
+            print(response["Labels"][k]["Confidence"], "%") 
+            print(df['Type'][i]) 
+    k += 1

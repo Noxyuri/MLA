@@ -6,7 +6,7 @@ secret_access_key = 'XYLjRkDYJ7mWzZk6mcosls/lqUDz8YVtRVhvvYsO'
 
 photo = 'opencv_frame_0.png'
 label_counter = 0
-region = "ap-southeast-1" 
+region = "ap-southeast-1"
 client= boto3.client('rekognition',region_name="ap-southeast-1",
  aws_access_key_id= access_key_id,
  aws_secret_access_key= secret_access_key)  
